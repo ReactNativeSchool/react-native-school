@@ -1,0 +1,22 @@
+{
+  "name": "react-native-school",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://github.com/HandlebarLabs/react-native-school.git",
+  "author": "Spencer Carli <spencercarli@gmail.com>",
+  "license": "MIT",
+  "scripts": {
+    "lint": "eslint courses/",
+    "prettier": "prettier --write \"**/*.+(js|jsx|json|yml|yaml|css|less|scss|ts|tsx|md|mdx|graphql|vue)\""
+  },
+  "devDependencies": {
+    "babel-eslint": "^10.0.1",
+    "eslint": "^5.7.0",
+    "eslint-config-airbnb": "^17.1.0",
+    "eslint-config-prettier": "^3.1.0",
+    "eslint-plugin-import": "^2.14.0",
+    "eslint-plugin-jsx-a11y": "^6.1.2",
+    "eslint-plugin-react": "^7.11.1",
+    "prettier": "^1.14.3"
+  }
+}
