@@ -14,18 +14,13 @@ const Storage = multer.diskStorage({
   }
 });
 
-const upload = multer({ storage: Storage }).array("imgUploader", 3); // Field name and max count
+const upload = multer({ storage: Storage });
 
-app.get("/", (req, res) => {
-  res.sendFile(`${__dirname}/index.html`);
-});
-
-app.post("/api/Upload", (req, res) => {
-  upload(req, res, err => {
-    if (err) {
-      return res.end("Something went wrong!");
-    }
-    return res.end("File uploaded sucessfully!.");
+app.post("/api/profile/upload", upload.single("avatar"), (req, res) => {
+  console.log("file", req.file);
+  console.log("body", req.body);
+  res.status(200).send({
+    message: "success!"
   });
 });
 
