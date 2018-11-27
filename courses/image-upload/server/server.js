@@ -19,7 +19,7 @@ const upload = multer({ storage: Storage });
 app.post("/api/upload-single", upload.single("photo"), (req, res) => {
   console.log("file", req.file);
   console.log("body", req.body);
-  res.status(200).send({
+  res.status(200).json({
     message: "success!"
   });
 });
@@ -27,7 +27,7 @@ app.post("/api/upload-single", upload.single("photo"), (req, res) => {
 app.post("/api/upload-multiple", upload.array("photo", 3), (req, res) => {
   console.log("file", req.files);
   console.log("body", req.body);
-  res.status(200).send({
+  res.status(200).json({
     message: "success!"
   });
 });

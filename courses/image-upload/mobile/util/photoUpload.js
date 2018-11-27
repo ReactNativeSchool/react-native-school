@@ -4,7 +4,6 @@ export const createFormData = (photo, body = {}) => {
   const uri =
     Platform.OS === "android" ? photo.uri : photo.uri.replace("file://", "");
 
-  console.log("photo", photo);
   const data = new FormData();
   data.append("photo", {
     uri,
@@ -27,7 +26,9 @@ export const uploadFileWithProgress = (url, opts = {}, onProgress) =>
       xhr.setRequestHeader(value, opts.headers[value]);
     });
 
-    xhr.onload = e => res(e.target);
+    xhr.onload = e => {
+      res(e.target.response);
+    };
     xhr.onerror = rej;
     if (xhr.upload && onProgress) {
       xhr.upload.onprogress = onProgress; // event.loaded / event.total * 100 ; //event.lengthComputable
