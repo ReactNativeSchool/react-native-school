@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { StyleSheet, View, Button, Image } from "react-native";
+import { StyleSheet, View, Button, Image, Text } from "react-native";
 import ImagePicker from "react-native-image-picker";
 import { createFormData } from "../util/photoUpload";
 
@@ -52,6 +52,7 @@ export default class App extends Component {
     const { photo } = this.state;
     return (
       <View style={styles.container}>
+        <Text>Single Image without Progress</Text>
         {photo ? (
           <React.Fragment>
             <Image style={styles.image} source={{ uri: photo.uri }} />

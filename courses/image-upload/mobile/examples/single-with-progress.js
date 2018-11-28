@@ -63,6 +63,7 @@ export default class App extends Component {
     const { photo, progress } = this.state;
     return (
       <View style={styles.container}>
+        <Text>Single Image with Progress</Text>
         {photo ? (
           <React.Fragment>
             <Image style={styles.image} source={{ uri: photo.uri }} />

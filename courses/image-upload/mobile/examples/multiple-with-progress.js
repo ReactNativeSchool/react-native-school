@@ -88,6 +88,7 @@ export default class App extends Component {
           </React.Fragment>
         )}
 
+        <Text>Multiple Images with Progress</Text>
         <Button
           title="Choose Photo"
           onPress={this.handleChoosePhoto}

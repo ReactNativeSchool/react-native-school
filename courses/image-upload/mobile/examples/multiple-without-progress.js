@@ -1,5 +1,12 @@
 import React, { Component } from "react";
-import { StyleSheet, View, Button, Image, ScrollView } from "react-native";
+import {
+  StyleSheet,
+  View,
+  Button,
+  Image,
+  ScrollView,
+  Text
+} from "react-native";
 import ImagePicker from "react-native-image-picker";
 import { createFormData } from "../util/photoUpload";
 
@@ -70,6 +77,7 @@ export default class App extends Component {
           </React.Fragment>
         )}
 
+        <Text>Multiple Images without Progress</Text>
         <Button
           title="Choose Photo"
           onPress={this.handleChoosePhoto}
