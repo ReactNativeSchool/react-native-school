@@ -1,27 +1,10 @@
 import React, { Component } from "react";
-import {
-  StyleSheet,
-  View,
-  Button,
-  Image,
-  ScrollView,
-  Text
-} from "react-native";
+import { View, Button, Image, ScrollView, Text } from "react-native";
 import ImagePicker from "react-native-image-picker";
-import { createFormData } from "../util/photoUpload";
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    justifyContent: "center",
-    alignItems: "center",
-    backgroundColor: "#F5FCFF"
-  },
-  image: {
-    width: 300,
-    height: 300
-  }
-});
+import { createFormData } from "../util/photoUpload";
+import styles from "../styles";
+import { MULTI_UPLOAD_URL } from "../config";
 
 export default class App extends Component {
   state = {
@@ -31,7 +14,7 @@ export default class App extends Component {
   handleUploadPhoto = () => {
     const { photos } = this.state;
 
-    fetch("http://localhost:3000/api/upload-multiple", {
+    fetch(MULTI_UPLOAD_URL, {
       method: "post",
       body: createFormData(photos, { userId: "123" })
     })

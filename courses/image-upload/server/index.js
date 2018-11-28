@@ -7,6 +7,7 @@ app.use(bodyParser.json());
 
 const Storage = multer.diskStorage({
   destination(req, file, callback) {
+    // In now.sh the only writeable directory is "/tmp"
     callback(null, process.env.NODE_ENV === "production" ? "/tmp" : "./images");
   },
   filename(req, file, callback) {

@@ -1,27 +1,10 @@
 import React, { Component } from "react";
-import {
-  StyleSheet,
-  View,
-  Button,
-  Image,
-  Text,
-  ScrollView
-} from "react-native";
+import { View, Button, Image, Text, ScrollView } from "react-native";
 import ImagePicker from "react-native-image-picker";
-import { uploadFileWithProgress, createFormData } from "../util/photoUpload";
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    justifyContent: "center",
-    alignItems: "center",
-    backgroundColor: "#F5FCFF"
-  },
-  image: {
-    width: 300,
-    height: 300
-  }
-});
+import { uploadFileWithProgress, createFormData } from "../util/photoUpload";
+import styles from "../styles";
+import { MULTI_UPLOAD_URL } from "../config";
 
 export default class App extends Component {
   state = {
@@ -33,8 +16,7 @@ export default class App extends Component {
     const { photos } = this.state;
 
     uploadFileWithProgress(
-      "http://localhost:3000/api/upload-multiple",
-      // "https://server-xksnkdjsku.now.sh/api/upload-multiple",
+      MULTI_UPLOAD_URL,
       {
         method: "post",
         body: createFormData(photos, { userId: "123" })
