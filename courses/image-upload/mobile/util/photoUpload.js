@@ -15,7 +15,8 @@ export const createFormData = (photo, body = {}) => {
     data.append("photo", {
       // On iOS we need to strip file:// so the uri is accessible
       uri: Platform.OS === "android" ? p.uri : p.uri.replace("file://", ""),
-      name: p.fileName
+      name: p.fileName,
+      type: p.type
     });
   });
 
