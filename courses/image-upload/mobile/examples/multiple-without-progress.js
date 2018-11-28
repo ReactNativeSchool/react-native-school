@@ -40,6 +40,10 @@ export default class App extends Component {
         console.log(res);
         alert("Upload success!");
         this.setState({ photos: [] });
+      })
+      .catch(error => {
+        console.log("error", error);
+        alert("Upload failed!");
       });
   };
 

@@ -42,8 +42,9 @@ export default class App extends Component {
         alert("Upload success!");
         this.setState({ progress: 0, photo: null });
       })
-      .catch(err => {
-        console.log(err);
+      .catch(error => {
+        console.log("error", error);
+        alert("Upload failed!");
       });
   };
 
