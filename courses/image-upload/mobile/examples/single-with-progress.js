@@ -52,10 +52,12 @@ export default class App extends Component {
 
   handleChoosePhoto = () => {
     const options = {
-      noData: true
+      noData: true,
+      maxWidth: 500
     };
 
     ImagePicker.launchImageLibrary(options, response => {
+      console.log("response", response);
       if (response.uri) {
         this.setState({ photo: response });
       }
