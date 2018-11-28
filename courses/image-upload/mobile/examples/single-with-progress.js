@@ -28,12 +28,14 @@ export default class App extends Component {
     // With progress
     uploadFileWithProgress(
       "http://localhost:3000/api/upload-single",
+      // "https://server-xksnkdjsku.now.sh/api/upload-single",
       {
         method: "post",
         body: createFormData(photo, { userId: "123" })
       },
       event => {
-        const progress = Math.floor(event.loaded / event.total) * 100;
+        const progress = Math.floor((event.loaded / event.total) * 100);
+        console.log("progress", progress);
         this.setState({ progress });
       }
     )

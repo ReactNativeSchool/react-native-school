@@ -39,7 +39,7 @@ export default class App extends Component {
         body: createFormData(photos, { userId: "123" })
       },
       event => {
-        const progress = Math.floor(event.loaded / event.total) * 100;
+        const progress = Math.floor((event.loaded / event.total) * 100);
         this.setState({ progress });
       }
     )
