@@ -34,6 +34,7 @@ export default class App extends Component {
 
     uploadFileWithProgress(
       "http://localhost:3000/api/upload-multiple",
+      // "https://server-xksnkdjsku.now.sh/api/upload-multiple",
       {
         method: "post",
         body: createFormData(photos, { userId: "123" })

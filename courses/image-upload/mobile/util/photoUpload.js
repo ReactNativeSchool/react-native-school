@@ -34,6 +34,7 @@ export const uploadFileWithProgress = (url, opts = {}, onProgress) =>
   new Promise((res, rej) => {
     const xhr = new XMLHttpRequest();
     xhr.open(opts.method || "get", url);
+    xhr.timeout = 10000;
 
     Object.keys(opts.headers || {}).forEach(value => {
       xhr.setRequestHeader(value, opts.headers[value]);
@@ -43,8 +44,9 @@ export const uploadFileWithProgress = (url, opts = {}, onProgress) =>
       res(e.target.response);
     };
     xhr.onerror = rej;
+    xhr.ontimeout = rej;
     if (xhr.upload && onProgress) {
-      xhr.upload.onprogress = onProgress; // event.loaded / event.total * 100 ; //event.lengthComputable
+      xhr.upload.onprogress = onProgress;
     }
     xhr.send(opts.body);
   });
