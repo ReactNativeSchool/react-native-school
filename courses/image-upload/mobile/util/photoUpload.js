@@ -1,14 +1,27 @@
 import { Platform } from "react-native";
 
 export const createFormData = (photo, body = {}) => {
-  const uri =
-    Platform.OS === "android" ? photo.uri : photo.uri.replace("file://", "");
-
   const data = new FormData();
-  data.append("photo", {
-    uri,
-    name: photo.fileName
-  });
+
+  if (Array.isArray(photo)) {
+    photo.forEach(p => {
+      const uri =
+        Platform.OS === "android" ? p.uri : p.uri.replace("file://", "");
+
+      data.append("photo", {
+        uri,
+        name: p.fileName
+      });
+    });
+  } else {
+    const uri =
+      Platform.OS === "android" ? photo.uri : photo.uri.replace("file://", "");
+
+    data.append("photo", {
+      uri,
+      name: photo.fileName
+    });
+  }
 
   Object.keys(body).forEach(key => {
     data.append(key, body[key]);

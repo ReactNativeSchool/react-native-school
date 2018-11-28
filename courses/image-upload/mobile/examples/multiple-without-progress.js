@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { StyleSheet, View, Button, Image } from "react-native";
+import { StyleSheet, View, Button, Image, ScrollView } from "react-native";
 import ImagePicker from "react-native-image-picker";
 import { createFormData } from "../util/photoUpload";
 
@@ -18,21 +18,21 @@ const styles = StyleSheet.create({
 
 export default class App extends Component {
   state = {
-    photo: null
+    photos: []
   };
 
   handleUploadPhoto = () => {
-    const { photo } = this.state;
+    const { photos } = this.state;
 
-    fetch("http://localhost:3000/api/upload-single", {
+    fetch("http://localhost:3000/api/upload-multiple", {
       method: "post",
-      body: createFormData(photo, { userId: "123" })
+      body: createFormData(photos, { userId: "123" })
     })
       .then(res => res.json())
       .then(res => {
         console.log(res);
         alert("Upload success!");
-        this.setState({ photo: null });
+        this.setState({ photos: [] });
       });
   };
 
@@ -43,32 +43,39 @@ export default class App extends Component {
 
     ImagePicker.launchImageLibrary(options, response => {
       if (response.uri) {
-        this.setState({ photo: response });
+        this.setState(state => ({
+          photos: [...state.photos, response]
+        }));
       }
     });
   };
 
   render() {
-    const { photo } = this.state;
+    const { photos } = this.state;
     return (
-      <View style={styles.container}>
-        {photo ? (
-          <React.Fragment>
+      <ScrollView contentContainerStyle={styles.container}>
+        {photos.map(photo => (
+          <View key={photo.uri}>
             <Image style={styles.image} source={{ uri: photo.uri }} />
+          </View>
+        ))}
+
+        {photos.length > 0 && (
+          <React.Fragment>
             <Button
               title="Upload"
               onPress={this.handleUploadPhoto}
               resizeMode="contain"
             />
           </React.Fragment>
-        ) : (
-          <Button
-            title="Choose Photo"
-            onPress={this.handleChoosePhoto}
-            resizeMode="contain"
-          />
         )}
-      </View>
+
+        <Button
+          title="Choose Photo"
+          onPress={this.handleChoosePhoto}
+          resizeMode="contain"
+        />
+      </ScrollView>
     );
   }
 }
