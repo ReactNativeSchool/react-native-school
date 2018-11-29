@@ -2,14 +2,16 @@ import React from "react";
 import { View, Text, Image, Button, Platform } from "react-native";
 import ImagePicker from "react-native-image-picker";
 
-const createFormData = (photo, body) => {
+const createFormData = (photos, body) => {
   const data = new FormData();
 
-  data.append("photo", {
-    name: photo.fileName,
-    type: photo.type,
-    uri:
-      Platform.OS === "android" ? photo.uri : photo.uri.replace("file://", "")
+  photos.forEach(photo => {
+    data.append("photo", {
+      name: photo.fileName,
+      type: photo.type,
+      uri:
+        Platform.OS === "android" ? photo.uri : photo.uri.replace("file://", "")
+    });
   });
 
   Object.keys(body).forEach(key => {
@@ -42,7 +44,8 @@ const uploadFileWithProgress = (url, opts = {}, onProgress) =>
 
 export default class App extends React.Component {
   state = {
-    photo: null,
+    // photo: null,
+    photos: [],
     progress: 0
   };
 
@@ -67,7 +70,7 @@ export default class App extends React.Component {
       "http://localhost:3000/api/upload",
       {
         method: "POST",
-        body: createFormData(this.state.photo, { userId: "123" })
+        body: createFormData(this.state.photos, { userId: "123" })
       },
       event => {
         const progress = Math.floor((event.loaded / event.total) * 100);
@@ -78,7 +81,11 @@ export default class App extends React.Component {
       .then(response => {
         console.log("upload succes", response);
         alert("Upload success!");
-        this.setState({ photo: null, progress: 0 });
+        this.setState({
+          // photo: null,
+          photos: [],
+          progress: 0
+        });
       })
       .catch(error => {
         console.log("upload error", error);
@@ -92,21 +99,28 @@ export default class App extends React.Component {
     };
     ImagePicker.launchImageLibrary(options, response => {
       if (response.uri) {
-        this.setState({ photo: response });
+        // this.setState({ photo: response });
+        this.setState(state => ({
+          photos: [...state.photos, response]
+        }));
       }
     });
   };
 
   render() {
-    const { photo, progress } = this.state;
+    // const { photo, progress } = this.state;
+    const { photos, progress } = this.state;
     return (
       <View style={{ flex: 1, alignItems: "center", justifyContent: "center" }}>
-        {photo && (
+        {photos.map(photo => (
+          <Image
+            key={photo.uri}
+            source={{ uri: photo.uri }}
+            style={{ width: 300, height: 300 }}
+          />
+        ))}
+        {photos.length > 0 && (
           <React.Fragment>
-            <Image
-              source={{ uri: photo.uri }}
-              style={{ width: 300, height: 300 }}
-            />
             <Text>
               Progress:
               {progress}
