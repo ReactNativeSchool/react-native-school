@@ -34,6 +34,9 @@ const uploadFileWithProgress = (url, opts = {}, onProgress) =>
       xhr.upload.onprogress = onProgress;
     }
 
+    xhr.timeout = 10000;
+    xhr.ontimeout = rej;
+
     xhr.onload = e => {
       res(e.target.response);
     };
@@ -67,7 +70,7 @@ export default class App extends React.Component {
       });
     */
     uploadFileWithProgress(
-      "http://localhost:3000/api/upload",
+      "https://server-zhilrktcgu.now.sh/api/upload",
       {
         method: "POST",
         body: createFormData(this.state.photos, { userId: "123" })
@@ -95,7 +98,8 @@ export default class App extends React.Component {
 
   handleChoosePhoto = () => {
     const options = {
-      noData: true
+      noData: true,
+      maxWidth: 500
     };
     ImagePicker.launchImageLibrary(options, response => {
       if (response.uri) {
