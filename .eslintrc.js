@@ -17,6 +17,7 @@ module.exports = {
     "no-underscore-dangle": 0,
     "react/no-multi-comp": 0,
     "func-names": 0,
-    "no-alert": 0
+    "no-alert": 0,
+    "no-console": 0
   }
 };
