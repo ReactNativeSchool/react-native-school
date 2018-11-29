@@ -7,10 +7,10 @@ app.use(bodyParser.json());
 
 const Storage = multer.diskStorage({
   destination(req, file, callback) {
-    callback(null, "./images");
+    callback(null, process.env.NODE_ENV === "production" ? "/tmp" : "./images");
   },
   filename(req, file, callback) {
-    callback(null, `${file.filename}_${Date.now()}_${file.originalname}`);
+    callback(null, `${file.fieldname}_${Date.now()}_${file.originalname}`);
   }
 });
 
