@@ -5,7 +5,8 @@ import {
   Button,
   TextInput,
   ActivityIndicator,
-  Switch
+  Switch,
+  SafeAreaView
 } from "react-native";
 import { Formik } from "formik";
 import * as yup from "yup";
@@ -47,7 +48,6 @@ const StyledInput = ({ formikKey, formikProps, label, ...rest }) => {
     <FieldWrapper formikKey={formikKey} label={label} formikProps={formikProps}>
       <TextInput
         style={inputStyles}
-        autoCorrect={false}
         onChangeText={formikProps.handleChange(formikKey)}
         onBlur={formikProps.handleBlur(formikKey)}
         {...rest}
@@ -98,8 +98,19 @@ const validationSchema = yup.object().shape({
     )
 });
 
+const signUp = ({ email }) =>
+  new Promise((resolve, reject) => {
+    setTimeout(() => {
+      if (email === "a@a.com") {
+        reject(new Error("You playin' with that email address"));
+      }
+
+      resolve(true);
+    }, 1000);
+  });
+
 const SignUp = () => (
-  <View style={{ flex: 1, justifyContent: "center" }}>
+  <SafeAreaView style={{ marginTop: 90 }}>
     <Formik
       initialValues={{
         email: "",
@@ -109,10 +120,16 @@ const SignUp = () => (
       }}
       validationSchema={validationSchema}
       onSubmit={(values, actions) => {
-        setTimeout(() => {
-          alert(JSON.stringify(values));
-          actions.setSubmitting(false);
-        }, 1000);
+        signUp({ email: values.email, password: values.password })
+          .then(() => {
+            alert(JSON.stringify(values));
+          })
+          .catch(error => {
+            actions.setFieldError("general", error.message);
+          })
+          .finally(() => {
+            actions.setSubmitting(false);
+          });
       }}
     >
       {formikProps => (
@@ -122,6 +139,8 @@ const SignUp = () => (
             placeholder="Email"
             formikKey="email"
             formikProps={formikProps}
+            autoCapitalize="none"
+            autoCorrect={false}
           />
           <StyledInput
             label="Password"
@@ -145,12 +164,17 @@ const SignUp = () => (
           {formikProps.isSubmitting ? (
             <ActivityIndicator />
           ) : (
-            <Button title="Submit" onPress={formikProps.handleSubmit} />
+            <React.Fragment>
+              <Button title="Submit" onPress={formikProps.handleSubmit} />
+              <Text style={{ color: "red", textAlign: "center" }}>
+                {formikProps.errors.general}
+              </Text>
+            </React.Fragment>
           )}
         </React.Fragment>
       )}
     </Formik>
-  </View>
+  </SafeAreaView>
 );
 
 export default SignUp;
