@@ -69,6 +69,13 @@ const validationSchema = yup.object().shape({
     .required()
     .min(2, "Seems a bit short...")
     .max(10, "We prefer insecure system, try a shorter password."),
+  confirmPassword: yup
+    .string()
+    .required()
+    .label("Confirm password")
+    .test("passwords-match", "Passwords must match ya fool", function(value) {
+      return this.parent.password === value;
+    }),
   agreeToTerms: yup
     .boolean()
     .label("Terms")
@@ -78,7 +85,12 @@ const validationSchema = yup.object().shape({
 export default () => (
   <SafeAreaView style={{ marginTop: 90 }}>
     <Formik
-      initialValues={{ email: "", password: "", agreeToTerms: false }}
+      initialValues={{
+        email: "",
+        password: "",
+        confirmPassword: "",
+        agreeToTerms: false
+      }}
       onSubmit={(values, actions) => {
         alert(JSON.stringify(values));
         setTimeout(() => {
@@ -102,6 +114,14 @@ export default () => (
             formikProps={formikProps}
             formikKey="password"
             placeholder="password"
+            secureTextEntry
+          />
+
+          <StyledInput
+            label="Confirm Password"
+            formikProps={formikProps}
+            formikKey="confirmPassword"
+            placeholder="confirm password"
             secureTextEntry
           />
 
