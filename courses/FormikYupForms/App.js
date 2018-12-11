@@ -5,7 +5,8 @@ import {
   Button,
   ActivityIndicator,
   Text,
-  View
+  View,
+  Switch
 } from "react-native";
 import { Formik } from "formik";
 import * as yup from "yup";
@@ -38,6 +39,22 @@ const StyledInput = ({ label, formikProps, formikKey, ...rest }) => {
   );
 };
 
+const StyledSwitch = ({ formikKey, formikProps, label, ...rest }) => (
+  <View style={{ marginHorizontal: 20, marginVertical: 5 }}>
+    <Text style={{ marginBottom: 3 }}>{label}</Text>
+    <Switch
+      value={formikProps.values[formikKey]}
+      onValueChange={value => {
+        formikProps.setFieldValue(formikKey, value);
+      }}
+      {...rest}
+    />
+    <Text style={{ color: "red" }}>
+      {formikProps.touched[formikKey] && formikProps.errors[formikKey]}
+    </Text>
+  </View>
+);
+
 const validationSchema = yup.object().shape({
   email: yup
     .string()
@@ -49,13 +66,17 @@ const validationSchema = yup.object().shape({
     .label("Password")
     .required()
     .min(2, "Seems a bit short...")
-    .max(10, "We prefer insecure system, try a shorter password.")
+    .max(10, "We prefer insecure system, try a shorter password."),
+  agreeToTerms: yup
+    .boolean()
+    .label("Terms")
+    .test("is-true", "Must agree to terms to continue", value => value === true)
 });
 
 export default () => (
   <SafeAreaView style={{ marginTop: 90 }}>
     <Formik
-      initialValues={{ email: "", password: "" }}
+      initialValues={{ email: "", password: "", agreeToTerms: false }}
       onSubmit={(values, actions) => {
         alert(JSON.stringify(values));
         setTimeout(() => {
@@ -80,6 +101,12 @@ export default () => (
             formikKey="password"
             placeholder="password"
             secureTextEntry
+          />
+
+          <StyledSwitch
+            label="Agree to Terms"
+            formikKey="agreeToTerms"
+            formikProps={formikProps}
           />
 
           {formikProps.isSubmitting ? (
