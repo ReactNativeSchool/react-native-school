@@ -11,6 +11,16 @@ import {
 import { Formik } from "formik";
 import * as yup from "yup";
 
+const FieldWrapper = ({ children, label, formikProps, formikKey }) => (
+  <View style={{ marginHorizontal: 20, marginVertical: 5 }}>
+    <Text style={{ marginBottom: 3 }}>{label}</Text>
+    {children}
+    <Text style={{ color: "red" }}>
+      {formikProps.touched[formikKey] && formikProps.errors[formikKey]}
+    </Text>
+  </View>
+);
+
 const StyledInput = ({ label, formikProps, formikKey, ...rest }) => {
   const inputStyles = {
     borderWidth: 1,
@@ -24,24 +34,19 @@ const StyledInput = ({ label, formikProps, formikKey, ...rest }) => {
   }
 
   return (
-    <View style={{ marginHorizontal: 20, marginVertical: 5 }}>
-      <Text style={{ marginBottom: 3 }}>{label}</Text>
+    <FieldWrapper label={label} formikKey={formikKey} formikProps={formikProps}>
       <TextInput
         style={inputStyles}
         onChangeText={formikProps.handleChange(formikKey)}
         onBlur={formikProps.handleBlur(formikKey)}
         {...rest}
       />
-      <Text style={{ color: "red" }}>
-        {formikProps.touched[formikKey] && formikProps.errors[formikKey]}
-      </Text>
-    </View>
+    </FieldWrapper>
   );
 };
 
 const StyledSwitch = ({ formikKey, formikProps, label, ...rest }) => (
-  <View style={{ marginHorizontal: 20, marginVertical: 5 }}>
-    <Text style={{ marginBottom: 3 }}>{label}</Text>
+  <FieldWrapper label={label} formikKey={formikKey} formikProps={formikProps}>
     <Switch
       value={formikProps.values[formikKey]}
       onValueChange={value => {
@@ -49,10 +54,7 @@ const StyledSwitch = ({ formikKey, formikProps, label, ...rest }) => (
       }}
       {...rest}
     />
-    <Text style={{ color: "red" }}>
-      {formikProps.touched[formikKey] && formikProps.errors[formikKey]}
-    </Text>
-  </View>
+  </FieldWrapper>
 );
 
 const validationSchema = yup.object().shape({
