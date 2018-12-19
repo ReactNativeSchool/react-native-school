@@ -18,6 +18,8 @@ module.exports = {
     "react/no-multi-comp": 0,
     "func-names": 0,
     "no-alert": 0,
-    "no-console": 0
+    "no-console": 0,
+    "import/no-extraneous-dependencies": 0,
+    "jsx-a11y/accessible-emoji": 0
   }
 };
