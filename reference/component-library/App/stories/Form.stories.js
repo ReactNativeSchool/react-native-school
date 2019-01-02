@@ -96,12 +96,12 @@ storiesOf("Form", module)
   .addDecorator(BufferView)
   .add("default", () => (
     <Form>
-      <View style={{ flex: 1, backgroundColor: "red" }} />
+      <View style={{ flex: 1, backgroundColor: "#e6e6e6" }} />
     </Form>
   ))
   .add("with header", () => (
     <Form header="Hello.">
-      <View style={{ flex: 1, backgroundColor: "red" }} />
+      <View style={{ flex: 1, backgroundColor: "#e6e6e6" }} />
     </Form>
   ))
   .add("with header and subheader", () => (
@@ -109,6 +109,6 @@ storiesOf("Form", module)
       header="Hello."
       subheader="Welcome back. Kindly enter your login details."
     >
-      <View style={{ flex: 1, backgroundColor: "red" }} />
+      <View style={{ flex: 1, backgroundColor: "#e6e6e6" }} />
     </Form>
   ));
