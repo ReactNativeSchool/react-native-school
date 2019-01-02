@@ -9,7 +9,8 @@ const styles = StyleSheet.create({
     paddingVertical: 14,
     borderRadius: 6,
     borderWidth: 1,
-    borderColor: colors.primary
+    borderColor: colors.primary,
+    marginVertical: 7
   },
   containerOutline: {
     borderColor: colors.border,
