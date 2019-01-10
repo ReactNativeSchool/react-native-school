@@ -6,7 +6,7 @@
   "author": "Spencer Carli <spencercarli@gmail.com>",
   "license": "MIT",
   "scripts": {
-    "lint": "eslint courses/",
+    "lint": "eslint courses/ reference/",
     "prettier": "prettier --write \"**/*.+(js|jsx|json|yml|yaml|css|less|scss|ts|tsx|md|mdx|graphql|vue)\""
   },
   "devDependencies": {
