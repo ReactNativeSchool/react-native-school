@@ -1,0 +1,1035 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Storyshots Button default 1`] = `
+<View
+  style={
+    Object {
+      "flex": 1,
+      "marginHorizontal": 20,
+      "marginVertical": 40,
+    }
+  }
+>
+  <View
+    accessible={true}
+    isTVSelectable={true}
+    onResponderGrant={[Function]}
+    onResponderMove={[Function]}
+    onResponderRelease={[Function]}
+    onResponderTerminate={[Function]}
+    onResponderTerminationRequest={[Function]}
+    onStartShouldSetResponder={[Function]}
+    style={
+      Object {
+        "backgroundColor": "#202c41",
+        "borderColor": "#202c41",
+        "borderRadius": 6,
+        "borderWidth": 1,
+        "marginVertical": 7,
+        "opacity": 1,
+        "paddingVertical": 14,
+      }
+    }
+  >
+    <Text
+      style={
+        Array [
+          Object {
+            "alignSelf": "center",
+            "color": "#fff",
+            "fontSize": 18,
+            "fontWeight": "500",
+          },
+        ]
+      }
+    >
+      Press Me
+    </Text>
+  </View>
+</View>
+`;
+
+exports[`Storyshots Button outline 1`] = `
+<View
+  style={
+    Object {
+      "flex": 1,
+      "marginHorizontal": 20,
+      "marginVertical": 40,
+    }
+  }
+>
+  <View
+    accessible={true}
+    isTVSelectable={true}
+    onResponderGrant={[Function]}
+    onResponderMove={[Function]}
+    onResponderRelease={[Function]}
+    onResponderTerminate={[Function]}
+    onResponderTerminationRequest={[Function]}
+    onStartShouldSetResponder={[Function]}
+    style={
+      Object {
+        "backgroundColor": "transparent",
+        "borderColor": "#c6c6c6",
+        "borderRadius": 6,
+        "borderWidth": 1,
+        "marginVertical": 7,
+        "opacity": 1,
+        "paddingVertical": 14,
+      }
+    }
+  >
+    <Text
+      style={
+        Array [
+          Object {
+            "alignSelf": "center",
+            "color": "#fff",
+            "fontSize": 18,
+            "fontWeight": "500",
+          },
+          Object {
+            "color": "#202c41",
+          },
+        ]
+      }
+    >
+      Press Me
+    </Text>
+  </View>
+</View>
+`;
+
+exports[`Storyshots Form default 1`] = `
+<View
+  style={
+    Object {
+      "flex": 1,
+      "marginHorizontal": 20,
+      "marginVertical": 40,
+    }
+  }
+>
+  <View
+    style={
+      Object {
+        "flex": 1,
+        "marginHorizontal": 20,
+      }
+    }
+  >
+    <View
+      style={
+        Object {
+          "backgroundColor": "#e6e6e6",
+          "flex": 1,
+        }
+      }
+    />
+  </View>
+</View>
+`;
+
+exports[`Storyshots Form with header 1`] = `
+<View
+  style={
+    Object {
+      "flex": 1,
+      "marginHorizontal": 20,
+      "marginVertical": 40,
+    }
+  }
+>
+  <View
+    style={
+      Object {
+        "flex": 1,
+        "marginHorizontal": 20,
+      }
+    }
+  >
+    <View
+      style={
+        Object {
+          "marginBottom": 28,
+        }
+      }
+    >
+      <Text
+        style={
+          Object {
+            "color": "#202c41",
+            "fontSize": 32,
+            "fontWeight": "600",
+            "marginBottom": 12,
+          }
+        }
+      >
+        Hello.
+      </Text>
+    </View>
+    <View
+      style={
+        Object {
+          "backgroundColor": "#e6e6e6",
+          "flex": 1,
+        }
+      }
+    />
+  </View>
+</View>
+`;
+
+exports[`Storyshots Form with header and subheader 1`] = `
+<View
+  style={
+    Object {
+      "flex": 1,
+      "marginHorizontal": 20,
+      "marginVertical": 40,
+    }
+  }
+>
+  <View
+    style={
+      Object {
+        "flex": 1,
+        "marginHorizontal": 20,
+      }
+    }
+  >
+    <View
+      style={
+        Object {
+          "marginBottom": 28,
+        }
+      }
+    >
+      <Text
+        style={
+          Object {
+            "color": "#202c41",
+            "fontSize": 32,
+            "fontWeight": "600",
+            "marginBottom": 12,
+          }
+        }
+      >
+        Hello.
+      </Text>
+      <Text
+        style={
+          Object {
+            "color": "#9ca5ab",
+            "fontSize": 20,
+            "marginBottom": 12,
+          }
+        }
+      >
+        Welcome back. Kindly enter your login details.
+      </Text>
+    </View>
+    <View
+      style={
+        Object {
+          "backgroundColor": "#e6e6e6",
+          "flex": 1,
+        }
+      }
+    />
+  </View>
+</View>
+`;
+
+exports[`Storyshots Form/FieldWrapper default 1`] = `
+<View
+  style={
+    Object {
+      "flex": 1,
+      "marginHorizontal": 20,
+      "marginVertical": 40,
+    }
+  }
+>
+  <View
+    style={
+      Object {
+        "marginBottom": 20,
+      }
+    }
+  >
+    <Text
+      style={
+        Object {
+          "color": "#9ca5ab",
+          "fontSize": 18,
+          "marginBottom": 10,
+        }
+      }
+    >
+      Email
+    </Text>
+    <Text>
+      Hello, wrapper.
+    </Text>
+    <Text
+      style={
+        Array [
+          Object {
+            "color": "#9ca5ab",
+            "fontSize": 13,
+            "marginTop": 5,
+          },
+        ]
+      }
+    >
+      
+    </Text>
+  </View>
+</View>
+`;
+
+exports[`Storyshots Form/FieldWrapper error message 1`] = `
+<View
+  style={
+    Object {
+      "flex": 1,
+      "marginHorizontal": 20,
+      "marginVertical": 40,
+    }
+  }
+>
+  <View
+    style={
+      Object {
+        "marginBottom": 20,
+      }
+    }
+  >
+    <Text
+      style={
+        Object {
+          "color": "#9ca5ab",
+          "fontSize": 18,
+          "marginBottom": 10,
+        }
+      }
+    >
+      Email
+    </Text>
+    <Text>
+      Hello, wrapper.
+    </Text>
+    <Text
+      style={
+        Array [
+          Object {
+            "color": "#9ca5ab",
+            "fontSize": 13,
+            "marginTop": 5,
+          },
+          Object {
+            "color": "#b55464",
+          },
+        ]
+      }
+    >
+      Please enter a valid email!
+    </Text>
+  </View>
+</View>
+`;
+
+exports[`Storyshots Form/FieldWrapper multiple fields 1`] = `
+<View
+  style={
+    Object {
+      "flex": 1,
+      "marginHorizontal": 20,
+      "marginVertical": 40,
+    }
+  }
+>
+  <View
+    style={
+      Object {
+        "marginBottom": 20,
+      }
+    }
+  >
+    <Text
+      style={
+        Object {
+          "color": "#9ca5ab",
+          "fontSize": 18,
+          "marginBottom": 10,
+        }
+      }
+    >
+      Email
+    </Text>
+    <Text>
+      Hello, wrapper.
+    </Text>
+    <Text
+      style={
+        Array [
+          Object {
+            "color": "#9ca5ab",
+            "fontSize": 13,
+            "marginTop": 5,
+          },
+        ]
+      }
+    >
+      
+    </Text>
+  </View>
+  <View
+    style={
+      Object {
+        "marginBottom": 20,
+      }
+    }
+  >
+    <Text
+      style={
+        Object {
+          "color": "#9ca5ab",
+          "fontSize": 18,
+          "marginBottom": 10,
+        }
+      }
+    >
+      Email
+    </Text>
+    <Text>
+      Hello, wrapper.
+    </Text>
+    <Text
+      style={
+        Array [
+          Object {
+            "color": "#9ca5ab",
+            "fontSize": 13,
+            "marginTop": 5,
+          },
+          Object {
+            "color": "#b55464",
+          },
+        ]
+      }
+    >
+      Please enter a valid email!
+    </Text>
+  </View>
+  <View
+    style={
+      Object {
+        "marginBottom": 20,
+      }
+    }
+  >
+    <Text
+      style={
+        Object {
+          "color": "#9ca5ab",
+          "fontSize": 18,
+          "marginBottom": 10,
+        }
+      }
+    >
+      Email
+    </Text>
+    <Text>
+      Hello, wrapper.
+    </Text>
+    <Text
+      style={
+        Array [
+          Object {
+            "color": "#9ca5ab",
+            "fontSize": 13,
+            "marginTop": 5,
+          },
+          Object {
+            "color": "#50c356",
+          },
+        ]
+      }
+    >
+      Looks legit!
+    </Text>
+  </View>
+</View>
+`;
+
+exports[`Storyshots Form/FieldWrapper success message 1`] = `
+<View
+  style={
+    Object {
+      "flex": 1,
+      "marginHorizontal": 20,
+      "marginVertical": 40,
+    }
+  }
+>
+  <View
+    style={
+      Object {
+        "marginBottom": 20,
+      }
+    }
+  >
+    <Text
+      style={
+        Object {
+          "color": "#9ca5ab",
+          "fontSize": 18,
+          "marginBottom": 10,
+        }
+      }
+    >
+      Email
+    </Text>
+    <Text>
+      Hello, wrapper.
+    </Text>
+    <Text
+      style={
+        Array [
+          Object {
+            "color": "#9ca5ab",
+            "fontSize": 13,
+            "marginTop": 5,
+          },
+          Object {
+            "color": "#50c356",
+          },
+        ]
+      }
+    >
+      Looks legit!
+    </Text>
+  </View>
+</View>
+`;
+
+exports[`Storyshots Form/Switch default 1`] = `
+<View
+  style={
+    Object {
+      "flex": 1,
+      "marginHorizontal": 20,
+      "marginVertical": 40,
+    }
+  }
+>
+  <View
+    style={
+      Object {
+        "marginBottom": 20,
+      }
+    }
+  >
+    <Text
+      style={
+        Object {
+          "color": "#9ca5ab",
+          "fontSize": 18,
+          "marginBottom": 10,
+        }
+      }
+    >
+      Agree to Terms
+    </Text>
+    <RCTSwitch
+      accessibilityRole="button"
+      onChange={[Function]}
+      onResponderTerminationRequest={[Function]}
+      onStartShouldSetResponder={[Function]}
+      style={
+        Object {
+          "height": 31,
+          "width": 51,
+        }
+      }
+      value={false}
+    />
+    <Text
+      style={
+        Array [
+          Object {
+            "color": "#9ca5ab",
+            "fontSize": 13,
+            "marginTop": 5,
+          },
+        ]
+      }
+    >
+      
+    </Text>
+  </View>
+</View>
+`;
+
+exports[`Storyshots Form/Switch with error 1`] = `
+<View
+  style={
+    Object {
+      "flex": 1,
+      "marginHorizontal": 20,
+      "marginVertical": 40,
+    }
+  }
+>
+  <View
+    style={
+      Object {
+        "marginBottom": 20,
+      }
+    }
+  >
+    <Text
+      style={
+        Object {
+          "color": "#9ca5ab",
+          "fontSize": 18,
+          "marginBottom": 10,
+        }
+      }
+    >
+      Agree to Terms
+    </Text>
+    <RCTSwitch
+      accessibilityRole="button"
+      onChange={[Function]}
+      onResponderTerminationRequest={[Function]}
+      onStartShouldSetResponder={[Function]}
+      style={
+        Object {
+          "height": 31,
+          "width": 51,
+        }
+      }
+      value={false}
+    />
+    <Text
+      style={
+        Array [
+          Object {
+            "color": "#9ca5ab",
+            "fontSize": 13,
+            "marginTop": 5,
+          },
+          Object {
+            "color": "#b55464",
+          },
+        ]
+      }
+    >
+      You must agree to the terms
+    </Text>
+  </View>
+</View>
+`;
+
+exports[`Storyshots Form/TextInput default 1`] = `
+<View
+  style={
+    Object {
+      "flex": 1,
+      "marginHorizontal": 20,
+      "marginVertical": 40,
+    }
+  }
+>
+  <View
+    style={
+      Object {
+        "marginBottom": 20,
+      }
+    }
+  >
+    <Text
+      style={
+        Object {
+          "color": "#9ca5ab",
+          "fontSize": 18,
+          "marginBottom": 10,
+        }
+      }
+    >
+      Demo
+    </Text>
+    <TextInput
+      allowFontScaling={true}
+      onChangeText={[Function]}
+      style={
+        Object {
+          "fontSize": 14,
+          "fontWeight": "500",
+          "paddingBottom": 10,
+        }
+      }
+      underlineColorAndroid="transparent"
+    />
+    <View
+      style={
+        Object {
+          "backgroundColor": "#c6c6c6",
+          "height": 1,
+        }
+      }
+    />
+    <Text
+      style={
+        Array [
+          Object {
+            "color": "#9ca5ab",
+            "fontSize": 13,
+            "marginTop": 5,
+          },
+        ]
+      }
+    >
+      
+    </Text>
+  </View>
+</View>
+`;
+
+exports[`Storyshots Form/TextInput email 1`] = `
+<View
+  style={
+    Object {
+      "flex": 1,
+      "marginHorizontal": 20,
+      "marginVertical": 40,
+    }
+  }
+>
+  <View
+    style={
+      Object {
+        "marginBottom": 20,
+      }
+    }
+  >
+    <Text
+      style={
+        Object {
+          "color": "#9ca5ab",
+          "fontSize": 18,
+          "marginBottom": 10,
+        }
+      }
+    >
+      Email
+    </Text>
+    <TextInput
+      allowFontScaling={true}
+      keyboardType="email-address"
+      onChangeText={[Function]}
+      style={
+        Object {
+          "fontSize": 14,
+          "fontWeight": "500",
+          "paddingBottom": 10,
+        }
+      }
+      underlineColorAndroid="transparent"
+      value="spencer@reactnativeschool.com"
+    />
+    <View
+      style={
+        Object {
+          "backgroundColor": "#c6c6c6",
+          "height": 1,
+        }
+      }
+    />
+    <Text
+      style={
+        Array [
+          Object {
+            "color": "#9ca5ab",
+            "fontSize": 13,
+            "marginTop": 5,
+          },
+        ]
+      }
+    >
+      
+    </Text>
+  </View>
+</View>
+`;
+
+exports[`Storyshots Form/TextInput password 1`] = `
+<View
+  style={
+    Object {
+      "flex": 1,
+      "marginHorizontal": 20,
+      "marginVertical": 40,
+    }
+  }
+>
+  <View
+    style={
+      Object {
+        "marginBottom": 20,
+      }
+    }
+  >
+    <Text
+      style={
+        Object {
+          "color": "#9ca5ab",
+          "fontSize": 18,
+          "marginBottom": 10,
+        }
+      }
+    >
+      Password
+    </Text>
+    <TextInput
+      allowFontScaling={true}
+      onChangeText={[Function]}
+      secureTextEntry={true}
+      style={
+        Object {
+          "fontSize": 14,
+          "fontWeight": "500",
+          "paddingBottom": 10,
+        }
+      }
+      underlineColorAndroid="transparent"
+      value="password"
+    />
+    <View
+      style={
+        Object {
+          "backgroundColor": "#c6c6c6",
+          "height": 1,
+        }
+      }
+    />
+    <Text
+      style={
+        Array [
+          Object {
+            "color": "#9ca5ab",
+            "fontSize": 13,
+            "marginTop": 5,
+          },
+        ]
+      }
+    >
+      
+    </Text>
+  </View>
+</View>
+`;
+
+exports[`Storyshots Form/TextInput with error message 1`] = `
+<View
+  style={
+    Object {
+      "flex": 1,
+      "marginHorizontal": 20,
+      "marginVertical": 40,
+    }
+  }
+>
+  <View
+    style={
+      Object {
+        "marginBottom": 20,
+      }
+    }
+  >
+    <Text
+      style={
+        Object {
+          "color": "#9ca5ab",
+          "fontSize": 18,
+          "marginBottom": 10,
+        }
+      }
+    >
+      Demo
+    </Text>
+    <TextInput
+      allowFontScaling={true}
+      onChangeText={[Function]}
+      style={
+        Object {
+          "fontSize": 14,
+          "fontWeight": "500",
+          "paddingBottom": 10,
+        }
+      }
+      underlineColorAndroid="transparent"
+    />
+    <View
+      style={
+        Object {
+          "backgroundColor": "#c6c6c6",
+          "height": 1,
+        }
+      }
+    />
+    <Text
+      style={
+        Array [
+          Object {
+            "color": "#9ca5ab",
+            "fontSize": 13,
+            "marginTop": 5,
+          },
+          Object {
+            "color": "#b55464",
+          },
+        ]
+      }
+    >
+      This is an error
+    </Text>
+  </View>
+</View>
+`;
+
+exports[`Storyshots Form/TextInput with placeholder 1`] = `
+<View
+  style={
+    Object {
+      "flex": 1,
+      "marginHorizontal": 20,
+      "marginVertical": 40,
+    }
+  }
+>
+  <View
+    style={
+      Object {
+        "marginBottom": 20,
+      }
+    }
+  >
+    <Text
+      style={
+        Object {
+          "color": "#9ca5ab",
+          "fontSize": 18,
+          "marginBottom": 10,
+        }
+      }
+    >
+      Demo
+    </Text>
+    <TextInput
+      allowFontScaling={true}
+      onChangeText={[Function]}
+      placeholder="demo placeholder"
+      style={
+        Object {
+          "fontSize": 14,
+          "fontWeight": "500",
+          "paddingBottom": 10,
+        }
+      }
+      underlineColorAndroid="transparent"
+    />
+    <View
+      style={
+        Object {
+          "backgroundColor": "#c6c6c6",
+          "height": 1,
+        }
+      }
+    />
+    <Text
+      style={
+        Array [
+          Object {
+            "color": "#9ca5ab",
+            "fontSize": 13,
+            "marginTop": 5,
+          },
+        ]
+      }
+    >
+      
+    </Text>
+  </View>
+</View>
+`;
+
+exports[`Storyshots Form/TextInput with value 1`] = `
+<View
+  style={
+    Object {
+      "flex": 1,
+      "marginHorizontal": 20,
+      "marginVertical": 40,
+    }
+  }
+>
+  <View
+    style={
+      Object {
+        "marginBottom": 20,
+      }
+    }
+  >
+    <Text
+      style={
+        Object {
+          "color": "#9ca5ab",
+          "fontSize": 18,
+          "marginBottom": 10,
+        }
+      }
+    >
+      Demo
+    </Text>
+    <TextInput
+      allowFontScaling={true}
+      onChangeText={[Function]}
+      style={
+        Object {
+          "fontSize": 14,
+          "fontWeight": "500",
+          "paddingBottom": 10,
+        }
+      }
+      underlineColorAndroid="transparent"
+      value="hello value"
+    />
+    <View
+      style={
+        Object {
+          "backgroundColor": "#c6c6c6",
+          "height": 1,
+        }
+      }
+    />
+    <Text
+      style={
+        Array [
+          Object {
+            "color": "#9ca5ab",
+            "fontSize": 13,
+            "marginTop": 5,
+          },
+        ]
+      }
+    >
+      
+    </Text>
+  </View>
+</View>
+`;
