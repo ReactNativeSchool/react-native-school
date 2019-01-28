@@ -7,6 +7,7 @@
     "test": "jest"
   },
   "dependencies": {
+    "instabug-reactnative": "^8.0.23",
     "react": "16.6.3",
     "react-native": "0.58.2"
   },
