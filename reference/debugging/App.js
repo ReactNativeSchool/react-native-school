@@ -31,11 +31,23 @@ class App extends React.Component {
       });
   };
 
+  incrementNumber = () => {
+    this.setState(state => ({ number: state.number + 1 }));
+  };
+
+  decrementNumber = () => {
+    this.setState(state => ({
+      number: state.number - 1
+    }));
+  };
+
   render() {
     return (
       <View style={styles.container}>
         <Text style={styles.text}>{this.state.number}</Text>
-        <Button title="Get Number" onPress={this.getNumber} />
+        <Button title="Increment Number" onPress={this.incrementNumber} />
+        <Button title="Decrement Number" onPress={this.decrementNumber} />
+        <Button title="Get New Number" onPress={this.getNumber} />
       </View>
     );
   }
