@@ -31,7 +31,7 @@ class App extends React.Component {
   }
 
   getNumber = () => {
-    fetch("https://pond-relative.glitch.me/numbera")
+    fetch("https://pond-relative.glitch.me/number")
       .then(res => res.json())
       .then(res => {
         this.setState({
@@ -44,13 +44,17 @@ class App extends React.Component {
   };
 
   incrementNumber = () => {
-    this.setState(state => ({ number: state.number + 1 }));
+    this.setState(state => {
+      const number = state.number + 1;
+      return { number };
+    });
   };
 
   decrementNumber = () => {
-    this.setState(state => ({
-      number: state.number - 1
-    }));
+    this.setState(state => {
+      const number = state.number - 1;
+      return { number };
+    });
   };
 
   render() {
