@@ -4,7 +4,8 @@
   "private": true,
   "scripts": {
     "start": "node node_modules/react-native/local-cli/cli.js start",
-    "test": "jest"
+    "test": "jest",
+    "ios:generate-source-map": "react-native bundle --platform ios --entry-file index.js --dev false --bundle-output ./ios/main.jsbundle --sourcemap-output ./ios-sourcemap.json"
   },
   "dependencies": {
     "instabug-reactnative": "^8.0.23",
