@@ -31,7 +31,7 @@ class App extends React.Component {
   }
 
   getNumber = () => {
-    fetch("https://pond-relative.glitch.me/numbera")
+    fetch("https://pond-relative.glitch.me/number")
       .then(res => res.json())
       .then(res => {
         this.setState({
@@ -58,6 +58,19 @@ class App extends React.Component {
     });
   };
 
+  causeCrash = () => {
+    alert(this.state.data.number);
+  };
+
+  causeException = () => {
+    try {
+      throw new Error("This is a very serious error.");
+    } catch (error) {
+      Instabug.reportJSException(error);
+      alert("an error occurred!");
+    }
+  };
+
   render() {
     return (
       <View style={styles.container}>
@@ -65,6 +78,8 @@ class App extends React.Component {
         <Button title="Increment Number" onPress={this.incrementNumber} />
         <Button title="Decrement Number" onPress={this.decrementNumber} />
         <Button title="Get New Number" onPress={this.getNumber} />
+        <Button title="Cause an exception" onPress={this.causeException} />
+        <Button title="Crash it" onPress={this.causeCrash} />
       </View>
     );
   }
