@@ -1,25 +1,3 @@
 module.exports = {
-  extends: ["airbnb", "eslint-config-prettier"],
-  parser: "babel-eslint",
-  env: {
-    browser: true,
-    jest: true
-  },
-  rules: {
-    "react/jsx-filename-extension": 0,
-    "react/prop-types": 0,
-    "react/destructuring-assignment": 0,
-    "global-require": 0,
-    "import/no-unresolved": 0,
-    "react/prefer-stateless-function": 0,
-    "prefer-destructuring": 0,
-    "import/prefer-default-export": 0,
-    "no-underscore-dangle": 0,
-    "react/no-multi-comp": 0,
-    "func-names": 0,
-    "no-alert": 0,
-    "no-console": 0,
-    "import/no-extraneous-dependencies": 0,
-    "jsx-a11y/accessible-emoji": 0
-  }
+  extends: ["handlebarlabs"]
 };
