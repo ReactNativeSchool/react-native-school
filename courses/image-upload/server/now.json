@@ -1,3 +1,9 @@
 {
-  "version": 1
+  "version": 2,
+  "builds": [
+    { "src": "**/*.js", "use": "@now/node" }
+  ],
+  "routes": [
+    { "src": "/api/upload", "dest": "/api/upload.js" }
+  ]
 }
